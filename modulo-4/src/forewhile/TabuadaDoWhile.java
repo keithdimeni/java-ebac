@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class TabuadaDoWhile {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
-        String resposta = "";
+        String resposta;
 
         do {
             System.out.println("Digite um número para gerar a tabuada:");
