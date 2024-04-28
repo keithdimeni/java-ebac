@@ -1,4 +1,4 @@
-package br.com.keith.singleton;
+package br.com.keith.creational.singleton;
 
 public class SingletonPropriedade {
     private static SingletonPropriedade singletonPropriedade;

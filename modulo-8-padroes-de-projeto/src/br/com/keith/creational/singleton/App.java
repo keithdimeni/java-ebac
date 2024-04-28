@@ -1,4 +1,4 @@
-package br.com.keith.singleton;
+package br.com.keith.creational.singleton;
 
 public class App {
     public static void main(String[] args) {
