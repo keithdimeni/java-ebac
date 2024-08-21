@@ -1,0 +1,30 @@
+services:
+  postgres-ebac:
+    image: postgres
+    container_name: postgres-ebac
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+    ports:
+      - 5432:5432
+    volumes:
+      - /dev/docker/volumes/postgres:/var/lib/postgresql/data
+    networks:
+      - postgres-ebac-network
+
+  pgadmin-compose:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "keithdimeni@admin.com"
+      PGADMIN_DEFAULT_PASSWORD: "admin"
+    ports:
+      - 8080:80
+    depends_on:
+      - postgres-ebac
+    networks:
+      - postgres-ebac-network
+
+networks:
+  postgres-ebac-network:
+    driver: bridge
